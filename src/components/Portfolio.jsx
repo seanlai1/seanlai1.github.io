@@ -3,6 +3,14 @@ import styles from './Portfolio.module.css'
 
 const projects = [
   {
+    title: 'Mimica',
+    description:
+      'Senior design project building an AI-powered sign language translation application that bridges communication between the hearing and deaf communities.',
+    tech: ['React', 'Python', 'Machine Learning', 'Computer Vision', 'MediaPipe'],
+    repo: 'https://github.com/Gurprasaad/Mimica-Senior-Design',
+    current: true,
+  },
+  {
     title: 'Homey',
     description:
       'Full-stack roommate finder web app with Tinder-style swiping, real-time messaging via Socket.io, and algorithm-based compatibility matching.',
@@ -68,9 +76,10 @@ export default function Portfolio() {
           <motion.article
             key={p.title}
             variants={item}
-            className={`card ${styles.project}${p.featured ? ' ' + styles.featured : ''}`}
+            className={`card ${styles.project}${p.featured ? ' ' + styles.featured : ''}${p.current ? ' ' + styles.current : ''}`}
           >
             {p.featured && <span className={styles.featuredBadge}>Featured</span>}
+            {p.current && <span className={styles.currentBadge}>Currently Working On</span>}
             <h3 className={styles.projectTitle}>{p.title}</h3>
             <p className={styles.projectDesc}>{p.description}</p>
             <div className={styles.techList}>
