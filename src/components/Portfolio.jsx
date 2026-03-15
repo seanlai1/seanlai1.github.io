@@ -5,8 +5,8 @@ const projects = [
   {
     title: 'Mimica',
     description:
-      'Senior design project building an AI-powered sign language translation application that bridges communication between the hearing and deaf communities.',
-    tech: ['React', 'Python', 'Machine Learning', 'Computer Vision', 'MediaPipe'],
+      'A voice translation device with a custom cloud pipeline featuring voice cloning and support for 10+ languages, built as a senior design project.',
+    tech: ['Python', 'Machine Learning', 'ESP32', 'Cloud Engineering', 'Voice Cloning'],
     repo: 'https://github.com/Gurprasaad/Mimica-Senior-Design',
     current: true,
   },
