@@ -33,7 +33,7 @@ function App() {
       scale: 1.00,
       scaleMobile: 1.00,
       color: 0x7ed466,
-      backgroundColor: 0x110525,
+      backgroundColor: 0x000000,
     })
     return () => { if (vantaEffect.current) vantaEffect.current.destroy() }
   }, [])
