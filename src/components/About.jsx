@@ -32,7 +32,7 @@ export default function About() {
             I'm a Computer Science and Engineering student at Santa Clara University
             with a passion for building full-stack web apps, conducting systems
             research, and exploring emerging tech like VR/AR and cybersecurity.
-            I've interned at a cybersecurity startup, worked as a research assistant
+            I've interned at Cequence, an API cybersecurity company, worked as a research assistant
             on QUIC network protocols, and shipped real products used by real people.
             Outside of coding I enjoy gaming, golf, and exploring new cultures.
             I spent a semester abroad at Yonsei University in Seoul where I studied Computer Networks and Korean language.
