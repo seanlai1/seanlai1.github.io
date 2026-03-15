@@ -35,7 +35,7 @@ export default function About() {
             I've interned at a cybersecurity startup, worked as a research assistant
             on QUIC network protocols, and shipped real products used by real people.
             Outside of coding I enjoy gaming, golf, and exploring new cultures.
-            I spent a semester studying abroad at Yonsei University in Seoul.
+            I spent a semester abroad at Yonsei University in Seoul where I studied Computer Networks and Korean language.
           </p>
         </motion.div>
       </div>
