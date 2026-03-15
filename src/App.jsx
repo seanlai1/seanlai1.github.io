@@ -18,12 +18,11 @@ const TABS = [
 function App() {
   const [active, setActive] = useState('about')
   const sectionRefs = useRef({})
-  const vantaRef = useRef(null)
   const vantaEffect = useRef(null)
 
   useEffect(() => {
     vantaEffect.current = NET({
-      el: vantaRef.current,
+      el: document.body,
       THREE,
       mouseControls: true,
       touchControls: true,
@@ -59,7 +58,6 @@ function App() {
 
   return (
     <div className="app">
-      <div ref={vantaRef} className="vanta-bg" />
       <header className="header">
         <h1 className="header-name">Sean Lai</h1>
         <p className="header-subtitle">Computer Science &amp; Engineering @ Santa Clara University</p>
