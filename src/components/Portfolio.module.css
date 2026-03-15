@@ -13,8 +13,8 @@
 }
 
 .featured {
-  border-color: rgba(20, 184, 166, 0.5);
-  background: linear-gradient(145deg, #0d1a18 0%, #0f2420 100%);
+  border-color: rgba(107, 140, 68, 0.5);
+  background: linear-gradient(145deg, #121a0d 0%, #192510 100%);
 }
 
 .current {
@@ -25,7 +25,7 @@
 .featuredBadge {
   font-size: 0.72rem;
   font-weight: 600;
-  color: #5eead4;
+  color: #a8c278;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
