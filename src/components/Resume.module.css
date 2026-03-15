@@ -116,9 +116,10 @@
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  width: 64px;
+  width: 80px;
   height: auto;
-  opacity: 0.12;
+  opacity: 0.35;
+  mix-blend-mode: luminosity;
   pointer-events: none;
   user-select: none;
 }
