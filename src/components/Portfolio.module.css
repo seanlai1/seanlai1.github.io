@@ -1,0 +1,52 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured {
+  border-color: rgba(124, 106, 247, 0.5);
+  background: linear-gradient(145deg, #141420 0%, #1a1730 100%);
+}
+
+.featuredBadge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #b3a8fa;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.projectTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.projectDesc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
