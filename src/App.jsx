@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import * as THREE from 'three'
+import NET from 'vanta/dist/vanta.net.min'
 import About from './components/About'
 import Portfolio from './components/Portfolio'
 import Resume from './components/Resume'
@@ -16,6 +18,25 @@ const TABS = [
 function App() {
   const [active, setActive] = useState('about')
   const sectionRefs = useRef({})
+  const vantaRef = useRef(null)
+  const vantaEffect = useRef(null)
+
+  useEffect(() => {
+    vantaEffect.current = NET({
+      el: vantaRef.current,
+      THREE,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200,
+      minWidth: 200,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x7ed466,
+      backgroundColor: 0x110525,
+    })
+    return () => { if (vantaEffect.current) vantaEffect.current.destroy() }
+  }, [])
 
   const scrollTo = (id) => {
     sectionRefs.current[id]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -38,6 +59,7 @@ function App() {
 
   return (
     <div className="app">
+      <div ref={vantaRef} className="vanta-bg" />
       <header className="header">
         <h1 className="header-name">Sean Lai</h1>
         <p className="header-subtitle">Computer Science &amp; Engineering @ Santa Clara University</p>
