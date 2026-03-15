@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import * as THREE from 'three'
-import NET from 'vanta/dist/vanta.net.min'
+import NETModule from 'vanta/dist/vanta.net.min'
+const NET = NETModule.default || NETModule
 import About from './components/About'
 import Portfolio from './components/Portfolio'
 import Resume from './components/Resume'
