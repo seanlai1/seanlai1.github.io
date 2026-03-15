@@ -104,3 +104,21 @@
   color: var(--color-accent-2);
   font-size: 0.75rem;
 }
+
+.eduContent {
+  position: relative;
+  overflow: hidden;
+  padding-right: 80px;
+}
+
+.eduLogo {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 64px;
+  height: auto;
+  opacity: 0.12;
+  pointer-events: none;
+  user-select: none;
+}
