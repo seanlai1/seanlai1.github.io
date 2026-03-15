@@ -25,7 +25,7 @@
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: rgba(124, 106, 247, 0.12);
+  background: rgba(20, 184, 166, 0.12);
   color: var(--color-accent);
   display: flex;
   align-items: center;
@@ -35,7 +35,7 @@
 }
 
 .linkCard:hover .linkIcon {
-  background: rgba(124, 106, 247, 0.22);
+  background: rgba(20, 184, 166, 0.22);
   color: var(--color-accent-hover);
 }
 
@@ -97,7 +97,7 @@
 .field input:focus,
 .field textarea:focus {
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(124, 106, 247, 0.15);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
 }
 
 .field input::placeholder,
