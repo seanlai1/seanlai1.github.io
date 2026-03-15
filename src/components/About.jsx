@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import styles from './About.module.css'
 import profilePhoto from '../assets/profile.jpeg'
+import scuLogo from '../assets/sculogo.png'
 
 const skills = [
   'Java', 'C++', 'JavaScript', 'Python',
@@ -54,12 +55,13 @@ export default function About() {
 
       <motion.div variants={item} className={styles.factsGrid}>
         {[
-          { icon: null, label: 'Education',  value: 'B.S. Computer Science & Engineering, Santa Clara University' },
+          { icon: null, label: 'Education',  value: 'B.S. Computer Science & Engineering, Santa Clara University', logo: scuLogo },
           { icon: null, label: 'Experience',  value: 'Cequence, Wireless Intelligent Networks Lab, IGraphix' },
           { icon: null, label: 'Location',    value: 'Burlingame, CA' },
           { icon: null, label: 'Interests',   value: 'Networks, VR/AR, Cybersecurity' },
-        ].map(({ icon, label, value }) => (
+        ].map(({ icon, label, value, logo }) => (
           <div key={label} className={`card ${styles.factCard}`}>
+            {logo && <img src={logo} className={styles.factCardLogo} alt="" aria-hidden="true" />}
             {icon && <span className={styles.factIcon}>{icon}</span>}
             <span className={styles.factLabel}>{label}</span>
             <span className={styles.factValue}>{value}</span>

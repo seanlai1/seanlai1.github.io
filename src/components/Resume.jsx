@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import styles from './Resume.module.css'
-import scuLogo from '../assets/sculogo.png'
 
 const experience = [
   {
@@ -49,7 +48,6 @@ const education = [
     school: 'Santa Clara University — Santa Clara, CA',
     year: '2022 – 2026',
     detail: 'Relevant: OOP, Machine Learning, Compilers, Algorithms, Operating Systems, Embedded Systems',
-    logo: scuLogo,
   },
   {
     degree: 'Study Abroad — Computer Science Focus',
@@ -124,10 +122,7 @@ export default function Resume() {
           {education.map((edu, i) => (
             <div key={i} className={styles.timelineItem}>
               <div className={styles.timelineDot} />
-              <div className={`${styles.timelineContent} ${edu.logo ? styles.eduContent : ''}`}>
-                {edu.logo && (
-                  <img src={edu.logo} className={styles.eduLogo} alt="" aria-hidden="true" />
-                )}
+              <div className={styles.timelineContent}>
                 <div className={styles.timelineHeader}>
                   <div>
                     <p className={styles.role}>{edu.degree}</p>
