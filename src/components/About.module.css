@@ -16,10 +16,7 @@
   object-fit: cover;
   object-position: center top;
   flex-shrink: 0;
-  border: 3px solid transparent;
-  background: linear-gradient(var(--color-card), var(--color-card)) padding-box,
-              linear-gradient(135deg, #7c6af7, #a78bfa) border-box;
-  box-shadow: 0 0 0 4px rgba(124, 106, 247, 0.15), var(--shadow);
+  box-shadow: var(--shadow);
 }
 
 .bio { display: flex; flex-direction: column; }

@@ -28,11 +28,7 @@ export default function About() {
           <img src={profilePhoto} alt="Sean Lai" className={styles.avatar} />
         </motion.div>
         <motion.div variants={item} className={styles.bio}>
-          <h2 className="section-title">Hi, I'm Sean</h2>
-          <p className="section-subtitle" style={{ marginBottom: 16 }}>
-            Computer Science &amp; Engineering Student · Burlingame, CA
-          </p>
-          <p style={{ color: 'var(--color-text-muted)', lineHeight: 1.8 }}>
+          <p style={{ color: 'var(--color-text-muted)', lineHeight: 1.8, marginTop: 0 }}>
             I'm a Computer Science and Engineering student at Santa Clara University
             with a passion for building full-stack web apps, conducting systems
             research, and exploring emerging tech like VR/AR and cybersecurity.
