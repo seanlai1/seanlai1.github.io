@@ -20,7 +20,7 @@
   font-weight: 700;
   font-family: 'Abigail Nagita', sans-serif;
   font-style: normal;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 0.05em;
   background: linear-gradient(135deg, #e2e2ec 0%, #6b8c44 60%, #a8c278 100%);
   -webkit-background-clip: text;
