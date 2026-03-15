@@ -18,8 +18,8 @@
 .header-name {
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 700;
-  font-family: 'Catwoman', monospace;
-  font-style: italic;
+  font-family: 'Abigail Nagita', sans-serif;
+  font-style: normal;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   background: linear-gradient(135deg, #e2e2ec 0%, #6b8c44 60%, #a8c278 100%);
