@@ -16,7 +16,7 @@
 }
 
 .header-name {
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(3.5rem, 10vw, 7rem);
   font-weight: 700;
   font-family: 'Tiro Tamil', serif;
   font-style: normal;
