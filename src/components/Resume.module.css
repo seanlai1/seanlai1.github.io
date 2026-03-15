@@ -118,8 +118,8 @@
   transform: translateY(-50%);
   width: 80px;
   height: auto;
-  opacity: 0.35;
-  mix-blend-mode: luminosity;
+  opacity: 0.55;
+  mix-blend-mode: screen;
   pointer-events: none;
   user-select: none;
 }
