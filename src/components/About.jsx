@@ -34,7 +34,7 @@ export default function About() {
             research, and exploring emerging tech like VR/AR and cybersecurity.
             I've interned at a cybersecurity startup, worked as a research assistant
             on QUIC network protocols, and shipped real products used by real people.
-            Outside of coding I enjoy gaming, golf, and exploring new cultures —
+            Outside of coding I enjoy gaming, golf, and exploring new cultures.
             I spent a semester studying abroad at Yonsei University in Seoul.
           </p>
         </motion.div>
