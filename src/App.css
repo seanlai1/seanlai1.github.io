@@ -18,9 +18,9 @@
 .header-name {
   font-size: clamp(3.5rem, 10vw, 7rem);
   font-weight: 700;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Proto Mono', monospace;
   font-style: normal;
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: 0.05em;
   background: linear-gradient(135deg, #e2e2ec 0%, #6b8c44 60%, #a8c278 100%);
   -webkit-background-clip: text;
