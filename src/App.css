@@ -18,7 +18,7 @@
 .header-name {
   font-size: clamp(3.5rem, 10vw, 7rem);
   font-weight: 700;
-  font-family: 'Tiro Tamil', serif;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   text-transform: capitalize;
   letter-spacing: 0.05em;
