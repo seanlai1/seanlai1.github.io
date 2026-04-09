@@ -2,9 +2,9 @@
   position: relative;
   z-index: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   min-height: 100vh;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -40,43 +40,79 @@
 .tab-wrapper {
   position: sticky;
   top: 0;
-  right: 0;
   z-index: 100;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  height: 100vh;
-  padding: 0 0 0 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  background: rgba(9, 9, 15, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--color-border);
+  gap: 16px;
+}
+
+.nav-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   flex-shrink: 0;
 }
 
+.nav-name {
+  font-family: 'Proto Mono', monospace;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #e2e2ec 0%, #6b8c44 60%, #a8c278 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+
+.nav-subtitle {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  margin: 2px 0 0 0;
+}
+
+.nav-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  flex-shrink: 0;
+  border: 2px solid rgba(107, 140, 68, 0.5);
+}
+
 .tab-nav {
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
+  flex-direction: row;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 16px;
-  padding: 6px;
+  border-radius: 999px;
+  padding: 4px;
   gap: 2px;
   position: relative;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
 }
 
 .tab-btn {
   position: relative;
   z-index: 1;
-  padding: 10px 20px;
+  padding: 10px 24px;
   border: none;
   background: transparent;
   color: var(--color-text-muted);
   font-size: 0.875rem;
   font-weight: 500;
-  border-radius: 10px;
+  border-radius: 999px;
   transition: color var(--transition);
   white-space: nowrap;
-  text-align: left;
+  text-align: center;
 }
 
 .tab-btn:hover {
@@ -90,22 +126,21 @@
 .tab-indicator {
   position: absolute;
   background: linear-gradient(135deg, #6b8c44, #a8c278);
-  border-radius: 8px;
+  border-radius: 999px;
   z-index: 0;
-  left: 6px;
-  right: 6px;
+  top: 4px;
+  bottom: 4px;
 }
 
 /* ── Content Panel ── */
 .content {
   flex: 1;
-  min-width: 0;
 }
 
 /* ── Page sections ── */
 .page-section {
   padding: 72px 0 80px;
-  scroll-margin-top: 24px;
+  scroll-margin-top: 68px;
   border-bottom: 1px solid var(--color-border);
 }
 

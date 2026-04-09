@@ -1,10 +1,9 @@
 .about { display: flex; flex-direction: column; gap: 40px; }
 
 .intro {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 32px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .avatarWrap { display: flex; justify-content: center; }

@@ -7,6 +7,7 @@ import About from './components/About'
 import Portfolio from './components/Portfolio'
 import Resume from './components/Resume'
 import Contact from './components/Contact'
+import profilePhoto from './assets/profile.jpeg'
 import './App.css'
 
 const TABS = [
@@ -59,22 +60,14 @@ function App() {
 
   return (
     <div className="app">
-      <main className="content">
-        <section id="about" ref={(el) => (sectionRefs.current['about'] = el)} className="page-section">
-          <About />
-        </section>
-        <section id="portfolio" ref={(el) => (sectionRefs.current['portfolio'] = el)} className="page-section">
-          <Portfolio />
-        </section>
-        <section id="resume" ref={(el) => (sectionRefs.current['resume'] = el)} className="page-section">
-          <Resume />
-        </section>
-        <section id="contact" ref={(el) => (sectionRefs.current['contact'] = el)} className="page-section">
-          <Contact />
-        </section>
-      </main>
-
       <div className="tab-wrapper">
+        <div className="nav-identity">
+          <img src={profilePhoto} alt="Sean Lai" className="nav-avatar" />
+          <div>
+            <span className="nav-name">Sean Lai</span>
+            <p className="nav-subtitle">Computer Science &amp; Engineering @ Santa Clara University</p>
+          </div>
+        </div>
         <nav className="tab-nav" role="tablist">
           {TABS.map((tab) => (
             <button
@@ -97,6 +90,21 @@ function App() {
           ))}
         </nav>
       </div>
+
+      <main className="content">
+        <section id="about" ref={(el) => (sectionRefs.current['about'] = el)} className="page-section">
+          <About />
+        </section>
+        <section id="portfolio" ref={(el) => (sectionRefs.current['portfolio'] = el)} className="page-section">
+          <Portfolio />
+        </section>
+        <section id="resume" ref={(el) => (sectionRefs.current['resume'] = el)} className="page-section">
+          <Resume />
+        </section>
+        <section id="contact" ref={(el) => (sectionRefs.current['contact'] = el)} className="page-section">
+          <Contact />
+        </section>
+      </main>
     </div>
   )
 }
