@@ -59,6 +59,21 @@ function App() {
 
   return (
     <div className="app">
+      <main className="content">
+        <section id="about" ref={(el) => (sectionRefs.current['about'] = el)} className="page-section">
+          <About />
+        </section>
+        <section id="portfolio" ref={(el) => (sectionRefs.current['portfolio'] = el)} className="page-section">
+          <Portfolio />
+        </section>
+        <section id="resume" ref={(el) => (sectionRefs.current['resume'] = el)} className="page-section">
+          <Resume />
+        </section>
+        <section id="contact" ref={(el) => (sectionRefs.current['contact'] = el)} className="page-section">
+          <Contact />
+        </section>
+      </main>
+
       <div className="tab-wrapper">
         <nav className="tab-nav" role="tablist">
           {TABS.map((tab) => (
@@ -82,21 +97,6 @@ function App() {
           ))}
         </nav>
       </div>
-
-      <main className="content">
-        <section id="about" ref={(el) => (sectionRefs.current['about'] = el)} className="page-section">
-          <About />
-        </section>
-        <section id="portfolio" ref={(el) => (sectionRefs.current['portfolio'] = el)} className="page-section">
-          <Portfolio />
-        </section>
-        <section id="resume" ref={(el) => (sectionRefs.current['resume'] = el)} className="page-section">
-          <Resume />
-        </section>
-        <section id="contact" ref={(el) => (sectionRefs.current['contact'] = el)} className="page-section">
-          <Contact />
-        </section>
-      </main>
     </div>
   )
 }

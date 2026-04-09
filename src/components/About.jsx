@@ -31,7 +31,7 @@ export default function About() {
           <h1 className={styles.introName}>Sean Lai</h1>
           <p className={styles.introSubtitle}>Computer Science &amp; Engineering @ Santa Clara University</p>
           <p style={{ color: 'var(--color-text-muted)', lineHeight: 1.8, marginTop: 0 }}>
-            Hi, I'm Sean Lai, a Computer Science and Engineering student at Santa Clara University with a passion for building impactful technology. My interests span software engineering, machine learning, and networking systems, where I enjoy designing scalable applications and exploring innovative solutions. I've worked on projects ranging from full-stack web apps to machine learning models, and I'm especially interested in creating tools that improve everyday experiences.
+            Hi, I'm Sean, a Computer Science and Engineering student at Santa Clara University with a passion for building impactful technology. My interests span software engineering, machine learning, and networking systems, where I enjoy designing scalable applications and exploring innovative solutions. I've worked on projects ranging from full-stack web apps to machine learning models, and I'm especially interested in creating tools that improve everyday experiences.
           </p>
         </motion.div>
       </div>
