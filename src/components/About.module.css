@@ -21,6 +21,28 @@
 
 .bio { display: flex; flex-direction: column; }
 
+.introName {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  font-family: 'Proto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #e2e2ec 0%, #6b8c44 60%, #a8c278 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 6px 0;
+  line-height: 1.1;
+}
+
+.introSubtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+}
+
 .sectionHeading {
   font-size: 1.05rem;
   font-weight: 600;

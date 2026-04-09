@@ -59,11 +59,6 @@ function App() {
 
   return (
     <div className="app">
-      <header className="header">
-        <h1 className="header-name">Sean Lai</h1>
-        <p className="header-subtitle">Computer Science &amp; Engineering @ Santa Clara University</p>
-      </header>
-
       <div className="tab-wrapper">
         <nav className="tab-nav" role="tablist">
           {TABS.map((tab) => (
