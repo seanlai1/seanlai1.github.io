@@ -62,7 +62,7 @@
 .nav-name {
   font-family: 'Proto Mono', monospace;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   background: linear-gradient(135deg, #e2e2ec 0%, #6b8c44 60%, #a8c278 100%);
