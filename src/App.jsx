@@ -65,7 +65,6 @@ function App() {
           <img src={profilePhoto} alt="Sean Lai" className="nav-avatar" />
           <div>
             <span className="nav-name">Sean Lai</span>
-            <p className="nav-subtitle">Computer Science &amp; Engineering @ Santa Clara University</p>
           </div>
         </div>
         <nav className="tab-nav" role="tablist">
