@@ -2,11 +2,19 @@ import { motion } from 'framer-motion'
 import styles from './About.module.css'
 import scuLogo from '../assets/sculogo.png'
 
-const skills = [
-  'Java', 'C++', 'JavaScript', 'Python',
-  'React', 'TypeScript', 'Node.js', 'HTML/CSS',
-  'C#', 'Unity', 'C', 'Docker',
-  'MongoDB', 'SQL', 'Git', 'Flask',
+const skillGroups = [
+  {
+    label: 'Languages',
+    skills: ['Java', 'C', 'C++', 'JavaScript', 'Python', 'HTML/CSS', 'C#', 'SQL'],
+  },
+  {
+    label: 'Frameworks / Libraries',
+    skills: ['Pandas', 'NumPy', 'TensorFlow', 'PyTorch', 'MongoDB', 'React'],
+  },
+  {
+    label: 'Tools / Platforms',
+    skills: ['Unity', 'Git', 'GitHub', 'GitLab', 'AWS', 'Docker', 'Kubernetes', 'Terraform', 'VS Code', 'Eclipse', 'Jupyter Notebook'],
+  },
 ]
 
 const container = {
@@ -32,11 +40,16 @@ export default function About() {
 
       <motion.div variants={item}>
         <h3 className={styles.sectionHeading}>Skills &amp; Technologies</h3>
-        <div className={styles.skillsGrid}>
-          {skills.map((skill) => (
-            <span key={skill} className="badge">{skill}</span>
-          ))}
-        </div>
+        {skillGroups.map((group) => (
+          <div key={group.label} className={styles.skillGroup}>
+            <span className={styles.skillGroupLabel}>{group.label}</span>
+            <div className={styles.skillsGrid}>
+              {group.skills.map((skill) => (
+                <span key={skill} className="badge">{skill}</span>
+              ))}
+            </div>
+          </div>
+        ))}
       </motion.div>
 
       <motion.div variants={item} className={styles.factsGrid}>
