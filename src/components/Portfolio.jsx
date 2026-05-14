@@ -79,7 +79,7 @@ export default function Portfolio() {
             className={`card ${styles.project}${p.featured ? ' ' + styles.featured : ''}${p.current ? ' ' + styles.current : ''}`}
           >
             {p.featured && <span className={styles.featuredBadge}>Featured</span>}
-            {p.current && <span className={styles.currentBadge}>Currently Working On</span>}
+            {p.current && <span className={styles.currentBadge}>SCU 2026 Senior Design Conference Session Award</span>}
             <h3 className={styles.projectTitle}>{p.title}</h3>
             <p className={styles.projectDesc}>{p.description}</p>
             <div className={styles.techList}>
