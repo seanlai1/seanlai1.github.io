@@ -17,6 +17,11 @@ const videos = [
     title: 'Homey Demo',
     description: 'Screen recording demo.',
   },
+  {
+    src: '/media/demoVid2.mp4',
+    title: 'Mimica Product Demo',
+    description: '',
+  },
 ]
 
 const photos = [
