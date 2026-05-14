@@ -14,7 +14,7 @@ const item = {
 const videos = [
   {
     src: '/media/demo.mov',
-    title: 'Demo Recording',
+    title: 'Homey Demo',
     description: 'Screen recording demo.',
   },
 ]
@@ -22,7 +22,7 @@ const videos = [
 const photos = [
   {
     src: '/media/screenshot.png',
-    title: 'Screenshot',
+    title: 'Mimica Prototype',
     description: '',
   },
 ]
