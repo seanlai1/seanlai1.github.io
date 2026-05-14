@@ -139,6 +139,6 @@
 }
 
 @media (max-width: 600px) {
-  .intro { grid-template-columns: 1fr; }
-  .avatarWrap { justify-content: flex-start; }
+  .factsGrid { grid-template-columns: 1fr 1fr; }
+  .about { gap: 28px; }
 }

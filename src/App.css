@@ -231,7 +231,48 @@
 
 /* ── Responsive ── */
 @media (max-width: 600px) {
-  .tab-btn { padding: 8px 14px; font-size: 0.8rem; }
   .app { padding: 0 16px; }
-  .header { padding: 32px 0 24px; }
+
+  .tab-wrapper {
+    flex-wrap: wrap;
+    padding: 8px 0;
+    gap: 8px;
+  }
+
+  .nav-identity {
+    gap: 8px;
+  }
+
+  .nav-name {
+    font-size: 1rem;
+  }
+
+  .nav-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .tab-nav {
+    flex-wrap: wrap;
+    border-radius: 12px;
+    justify-content: center;
+  }
+
+  .tab-btn {
+    padding: 7px 12px;
+    font-size: 0.78rem;
+  }
+
+  .page-section {
+    padding: 48px 0 56px;
+    scroll-margin-top: 100px;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
 }
