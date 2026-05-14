@@ -31,7 +31,7 @@ const photos = [
     description: '',
   },
   {
-    src: '/media/mimica-poster.jpg',
+    src: '/media/AFED5EB3-F027-404F-B0FC-674D1EA67E9F_1_105_c.jpeg',
     title: 'Mimica Team Poster',
     description: '',
   },
