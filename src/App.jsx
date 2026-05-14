@@ -7,12 +7,14 @@ import About from './components/About'
 import Portfolio from './components/Portfolio'
 import Resume from './components/Resume'
 import Contact from './components/Contact'
+import Media from './components/Media'
 import profilePhoto from './assets/profile.jpeg'
 import './App.css'
 
 const TABS = [
   { id: 'about',     label: 'About Me' },
   { id: 'portfolio', label: 'Portfolio' },
+  { id: 'media',     label: 'Media' },
   { id: 'resume',    label: 'Resume' },
   { id: 'contact',   label: 'Contact' },
 ]
@@ -96,6 +98,9 @@ function App() {
         </section>
         <section id="portfolio" ref={(el) => (sectionRefs.current['portfolio'] = el)} className="page-section">
           <Portfolio />
+        </section>
+        <section id="media" ref={(el) => (sectionRefs.current['media'] = el)} className="page-section">
+          <Media />
         </section>
         <section id="resume" ref={(el) => (sectionRefs.current['resume'] = el)} className="page-section">
           <Resume />
