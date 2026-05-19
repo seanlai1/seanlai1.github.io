@@ -24,10 +24,11 @@
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  min-height: 280px;
+  min-height: 600px;
+  height: 80vh;
   display: flex;
   align-items: stretch;
-  border: 1px solid var(--color-border);
+  margin: 0 -24px;
 }
 
 .bioHeroBg {
@@ -44,7 +45,7 @@
   position: relative;
   z-index: 1;
   width: 55%;
-  padding: 36px 40px;
+  padding: 36px 40px 36px 64px;
   background: linear-gradient(
     to right,
     rgba(9, 9, 15, 0.92) 0%,
