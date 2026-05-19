@@ -35,6 +35,11 @@ const photos = [
     title: 'Mimica Team Poster',
     description: '',
   },
+  {
+    src: '/media/mimicahardware.png',
+    title: 'Mimica Internal Hardware',
+    description: '',
+  },
 ]
 
 export default function Media() {
