@@ -31,10 +31,13 @@ export default function About() {
   return (
     <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }} className={styles.about}>
       <div className={styles.intro}>
-        <motion.div variants={item} className={styles.bio}>
-          <p style={{ color: 'var(--color-text-muted)', lineHeight: 1.8, marginTop: 0 }}>
-            Hi, I'm Sean, a Computer Science and Engineering student at Santa Clara University with a passion for building impactful technology. My interests span software engineering, machine learning, and networking systems, where I enjoy designing scalable applications and exploring innovative solutions. I've worked on projects ranging from full-stack web apps to machine learning models, and I'm especially interested in creating tools that improve everyday experiences.
-          </p>
+        <motion.div variants={item} className={styles.bioHero}>
+          <div className={styles.bioHeroBg} aria-hidden="true" />
+          <div className={styles.bioTextWrap}>
+            <p className={styles.bioText}>
+              Hi, I'm Sean, a Computer Science and Engineering student at Santa Clara University with a passion for building impactful technology. My interests span software engineering, machine learning, and networking systems, where I enjoy designing scalable applications and exploring innovative solutions. I've worked on projects ranging from full-stack web apps to machine learning models, and I'm especially interested in creating tools that improve everyday experiences.
+            </p>
+          </div>
         </motion.div>
       </div>
 

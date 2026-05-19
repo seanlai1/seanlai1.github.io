@@ -20,6 +20,56 @@
 
 .bio { display: flex; flex-direction: column; }
 
+.bioHero {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--color-border);
+}
+
+.bioHeroBg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/media/seanbackgroundphoto.jpeg');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.bioTextWrap {
+  position: relative;
+  z-index: 1;
+  width: 55%;
+  padding: 36px 40px;
+  background: linear-gradient(
+    to right,
+    rgba(9, 9, 15, 0.92) 0%,
+    rgba(9, 9, 15, 0.85) 70%,
+    rgba(9, 9, 15, 0.0) 100%
+  );
+  display: flex;
+  align-items: center;
+}
+
+.bioText {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .bioTextWrap {
+    width: 100%;
+    padding: 24px 20px;
+    background: rgba(9, 9, 15, 0.88);
+  }
+  .bioHero { min-height: 200px; }
+}
+
 .introName {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
