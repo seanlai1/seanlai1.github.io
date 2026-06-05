@@ -1,5 +1,65 @@
 import { motion } from 'framer-motion'
+import { Briefcase, GraduationCap, FlaskConical, Gamepad2, BarChart2 } from 'lucide-react'
+import RadialOrbitalTimeline from './ui/radial-orbital-timeline'
 import styles from './Resume.module.css'
+
+const timelineData = [
+  {
+    id: 1,
+    title: 'WINLab Research',
+    date: 'Sep 2025–Now',
+    content: 'Conducting research on the QUIC network protocol, benchmarking throughput, latency, and packet loss against TCP/UDP. Investigating game theory model integration to optimize resource allocation.',
+    category: 'Research',
+    icon: FlaskConical,
+    relatedIds: [2, 5],
+    status: 'in-progress',
+    energy: 90,
+  },
+  {
+    id: 2,
+    title: 'Cequence Intern',
+    date: 'Jul–Sep 2025',
+    content: 'Automated AWS infrastructure with Terraform & Ansible. Reduced monthly cloud spending ~10%. Collaborated with teams in Australia, India, and Japan on API gateway cybersecurity plug-ins.',
+    category: 'Industry',
+    icon: Briefcase,
+    relatedIds: [1, 3],
+    status: 'completed',
+    energy: 100,
+  },
+  {
+    id: 3,
+    title: 'SCU VR/AR Lab',
+    date: 'Jan–Dec 2024',
+    content: 'Developed 3D environments and game mechanics in Unity using C# scripting. Collaborated on a body positivity VR experience using Blender and real-time movement tracking.',
+    category: 'Research',
+    icon: Gamepad2,
+    relatedIds: [2, 4],
+    status: 'completed',
+    energy: 85,
+  },
+  {
+    id: 4,
+    title: 'IGraphix Intern',
+    date: 'Jun–Sep 2024',
+    content: 'Researched media editorials across Asian languages. Built marketing reports on revenue streams and Asian audiences. Coordinated LPGA events with Asian advertising agencies.',
+    category: 'Industry',
+    icon: BarChart2,
+    relatedIds: [3],
+    status: 'completed',
+    energy: 75,
+  },
+  {
+    id: 5,
+    title: 'SCU Degree',
+    date: '2022–2026',
+    content: 'B.S. Computer Science & Engineering. Relevant coursework: OOP, Machine Learning, Compilers, Algorithms, Operating Systems, Embedded Systems.',
+    category: 'Education',
+    icon: GraduationCap,
+    relatedIds: [1, 2],
+    status: 'in-progress',
+    energy: 80,
+  },
+]
 
 const experience = [
   {
@@ -85,6 +145,13 @@ export default function Resume() {
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download PDF
         </a>
+      </motion.div>
+
+      <motion.div variants={item} style={{ marginBottom: '40px' }}>
+        <h3 style={{ fontSize: '1.05rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: '16px' }}>
+          Career Timeline
+        </h3>
+        <RadialOrbitalTimeline timelineData={timelineData} />
       </motion.div>
 
       <motion.section variants={item} className={styles.block}>
