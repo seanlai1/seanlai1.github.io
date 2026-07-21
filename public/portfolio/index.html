@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sean Lai — Portfolio</title>
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .back-btn { position:fixed;top:16px;left:16px;z-index:999;background:hsla(240,1%,17%,.85);border:1px solid hsl(0,0%,22%);color:hsl(45,100%,72%);font-family:'Poppins',sans-serif;font-size:13px;padding:8px 16px;border-radius:8px;cursor:pointer;text-decoration:none;backdrop-filter:blur(8px);transition:background .2s; }
+    .back-btn:hover{background:hsla(240,1%,25%,.95);}
+    .avatar-box img { border-radius: 18px; }
+    .project-demo-video { display:block; width:100%; margin-top:10px; border-radius:12px; }
+    .project-text-link { display:block; text-decoration:none; color:inherit; }
+    .resume-download-wrap { margin-top: 14px; }
+    .resume-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid hsl(0,0%,26%);
+      background: hsla(240, 1%, 17%, 0.9);
+      color: hsl(45,100%,72%);
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .resume-download-btn:hover { background: hsla(240, 1%, 24%, 0.95); }
+    .project-flip-card { perspective: 1200px; }
+    .project-card-inner {
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease;
+      min-height: 320px;
+    }
+    .project-item--mimica .project-card-inner { min-height: 420px; }
+    .project-item--homey .project-card-inner { min-height: 420px; }
+    .project-card-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      padding: 14px 12px 12px;
+      border: 1px solid hsl(0,0%,22%);
+      background: hsl(240, 2%, 12%);
+      box-shadow: 0 16px 30px hsla(0, 0%, 0%, 0.25);
+    }
+    .project-card-back {
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      pointer-events: none;
+    }
+    .project-card-front { pointer-events: auto; }
+    .project-card-back .project-title,
+    .project-card-back .project-category,
+    .project-card-back .project-description {
+      margin-left: 0;
+    }
+    .project-description {
+      color: hsl(0, 0%, 84%);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .project-card-back .project-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .project-mini-link {
+      color: hsl(45,100%,72%);
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .project-mini-link:hover { text-decoration: underline; }
+    .project-info-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 1px solid hsl(0,0%,24%);
+      background: hsla(240, 2%, 16%, 0.92);
+      color: hsl(45,100%,72%);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      z-index: 8;
+      opacity: 0;
+      transform: translateY(-4px);
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+    }
+    .project-info-btn ion-icon { font-size: 18px; }
+    .project-item:hover .project-info-btn { background: hsla(240, 2%, 23%, 0.97); }
+    .project-item:hover .project-info-btn,
+    .project-item.is-flipped .project-info-btn {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .project-item.is-flipped .project-card-inner { transform: rotateY(180deg); }
+    .project-item.is-flipped .project-card-front { pointer-events: none; }
+    .project-item.is-flipped .project-card-back { pointer-events: auto; }
+    .project-front-link:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
+    .project-front-link:hover .project-item-icon-box { --scale: 1; opacity: 1; }
+    .project-front-link:hover img { transform: scale(1.1); }
+    .project-item > a { width: auto; }
+  </style>
+</head>
+
+<body>
+  <a href="../" class="back-btn">← Home</a>
+
+  <main>
+
+    <!--  SIDEBAR  -->
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Sean Lai" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Sean Lai">Sean Lai</h1>
+          <p class="title">CS &amp; Engineering Student</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:mrseanlai@gmail.com" class="contact-link">mrseanlai@gmail.com</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>Burlingame, California, USA</address>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="school-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">University</p>
+              <span class="contact-link">Santa Clara University</span>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Graduation</p>
+              <time datetime="2026-06">June 2026</time>
+            </div>
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://github.com/seanlai1" class="social-link" target="_blank" rel="noreferrer">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://linkedin.com/in/sean-lai1" class="social-link" target="_blank" rel="noreferrer">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+    <!--  MAIN CONTENT  -->
+    <div class="main-content">
+
+      <!--  NAVBAR  -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link>About</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+        </ul>
+      </nav>
+
+
+      <!--  ABOUT  -->
+      <article class="about active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            Hi, I'm Sean, a Computer Science and Engineering student at Santa Clara University with a passion for
+            building impactful technology. My interests span software engineering, machine learning, and networking
+            systems, where I enjoy designing scalable applications and exploring innovative solutions.
+          </p>
+          <p>
+            I've worked on projects ranging from full-stack web apps to machine learning models, and I'm especially
+            interested in creating tools that improve everyday experiences. I've interned at Cequence Cybersecurity,
+            conducted research at SCU's Wireless Intelligent Networks Lab, and developed VR/AR experiences at
+            SCU's Wave+Imaginarium.
+          </p>
+        </section>
+
+        <!--  WHAT I'M DOING  -->
+        <section class="service">
+
+          <h3 class="h3 service-title">What I'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="software engineering icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Software Engineering</h4>
+                <p class="service-item-text">
+                  Building full-stack web applications and scalable backend systems with modern frameworks and cloud infrastructure.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="machine learning icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Machine Learning</h4>
+                <p class="service-item-text">
+                  Designing and evaluating ML models — from collaborative filtering to deep learning — for real-world prediction tasks.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg" alt="networking research icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Networking Research</h4>
+                <p class="service-item-text">
+                  Researching the QUIC network protocol and applying reinforcement learning to optimize protocol behavior under bottleneck conditions.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-photo.svg" alt="VR/AR icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">VR / AR Development</h4>
+                <p class="service-item-text">
+                  Creating immersive 3D environments and interactive experiences using Unity, C# scripting, and Blender.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+      <!--  RESUME  -->
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+          <div class="resume-download-wrap">
+            <a class="resume-download-btn" href="../media/Sean%20Resume%20June%202026.docx.pdf" download>
+              <ion-icon name="download-outline"></ion-icon>
+              <span>Download Resume</span>
+            </a>
+          </div>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">B.S. Computer Science &amp; Engineering — Santa Clara University</h4>
+              <span>2022 — 2026</span>
+              <p class="timeline-text">
+                Relevant coursework: Object-Oriented Programming, Machine Learning, Compilers, Algorithms,
+                Operating Systems, Embedded Systems.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Study Abroad — Yonsei University, Seoul, South Korea</h4>
+              <span>Aug 2024 — Dec 2024</span>
+              <p class="timeline-text">
+                Studied Computer Networks and Korean Language. Gained exposure to international perspectives in
+                technology and culture.
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Research Assistant — Wireless Intelligent Networks Lab, SCU</h4>
+              <span>Sep 2025 — Present</span>
+              <p class="timeline-text">
+                Conducting research on the QUIC network protocol, benchmarking throughput, latency, and packet loss
+                against TCP/UDP. Investigating game theory and Q-learning model integration into QUIC to optimize
+                resource allocation under bottleneck conditions.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Customer Engineering Intern — Cequence Cybersecurity</h4>
+              <span>July 2025 — Sep 2025</span>
+              <p class="timeline-text">
+                Automated AWS infrastructure using Terraform, Ansible, and CI/CD pipelines. Reduced monthly cloud
+                spending ~10% through resource optimization. Collaborated with global engineering teams in Australia,
+                India, and Japan on API gateway cybersecurity plug-ins.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">VR &amp; AR Researcher / Game Developer — SCU Wave+Imaginarium</h4>
+              <span>Jan 2024 — Dec 2024</span>
+              <p class="timeline-text">
+                Developed 3D environments and game mechanics in Unity using C# scripting, including a first-person PC
+                game set in a live forest virtual space. Collaborated on a body positivity VR experience using Unity,
+                Blender, and real-time movement tracking.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Media Research Intern — IGraphix, Daly City, CA</h4>
+              <span>June 2024 — Sep 2024</span>
+              <p class="timeline-text">
+                Researched media editorials across Asian languages (print, TV, digital, social). Organized marketing
+                databases in Google Sheets and Excel. Coordinated LPGA golfing events with Asian advertising agencies.
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Python</h5>
+                <data value="90">90%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">JavaScript / React</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Java / C++</h5>
+                <data value="80">80%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Machine Learning (TensorFlow / PyTorch)</h5>
+                <data value="75">75%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 75%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">AWS / Docker / Terraform</h5>
+                <data value="70">70%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Unity / C#</h5>
+                <data value="65">65%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 65%;"></div>
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+      <!--  PORTFOLIO  -->
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+            <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
+            <li class="filter-item"><button data-filter-btn>Web Development</button></li>
+            <li class="filter-item"><button data-filter-btn>Machine Learning</button></li>
+            <li class="filter-item"><button data-filter-btn>Research</button></li>
+            <li class="filter-item"><button data-filter-btn>VR/AR</button></li>
+          </ul>
+
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-selecct-value>Select category</div>
+              <div class="select-icon"><ion-icon name="chevron-down"></ion-icon></div>
+            </button>
+            <ul class="select-list">
+              <li class="select-item"><button data-select-item>All</button></li>
+              <li class="select-item"><button data-select-item>Web Development</button></li>
+              <li class="select-item"><button data-select-item>Machine Learning</button></li>
+              <li class="select-item"><button data-select-item>Research</button></li>
+              <li class="select-item"><button data-select-item>VR/AR</button></li>
+            </ul>
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item project-item--mimica active" data-filter-item data-category="machine learning">
+              <div class="project-flip-card" data-project-card>
+                <div class="project-card-inner">
+                  <div class="project-card-face project-card-front">
+                    <button type="button" class="project-info-btn" data-flip-btn aria-label="Show project description">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </button>
+                    <a class="project-front-link" href="https://github.com/Gurprasaad/Mimica-Senior-Design" target="_blank" rel="noreferrer">
+                      <figure class="project-img">
+                        <div class="project-item-icon-box">
+                          <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+                        <img src="../media/screenshot.png" alt="Mimica" loading="lazy">
+                      </figure>
+                      <h3 class="project-title">Mimica</h3>
+                      <p class="project-category">Machine Learning — SCU 2026 Senior Design Award</p>
+                    </a>
+                  </div>
+                  <div class="project-card-face project-card-back">
+                    <button type="button" class="project-info-btn" data-flip-btn aria-label="Back to project card">
+                      <ion-icon name="arrow-undo-outline"></ion-icon>
+                    </button>
+                    <div>
+                      <h3 class="project-title">Mimica</h3>
+                      <p class="project-category">Machine Learning</p>
+                      <p class="project-description">A voice translation device with a custom cloud pipeline featuring voice cloning and support for 10+ languages, built as a senior design project.</p>
+                    </div>
+                    <div class="project-links">
+                      <a class="project-mini-link" href="https://github.com/Gurprasaad/Mimica-Senior-Design" target="_blank" rel="noreferrer">View Source</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item project-item--homey active" data-filter-item data-category="web development">
+              <div class="project-flip-card" data-project-card>
+                <div class="project-card-inner">
+                  <div class="project-card-face project-card-front">
+                    <button type="button" class="project-info-btn" data-flip-btn aria-label="Show project description">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </button>
+                    <a class="project-front-link" href="https://github.com/seanlai1/Homey" target="_blank" rel="noreferrer">
+                      <figure class="project-img">
+                        <div class="project-item-icon-box">
+                          <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+                        <img src="../media/homeyscreenshot.png" alt="Homey" loading="lazy">
+                      </figure>
+                    </a>
+                    <video class="project-demo-video" controls muted playsinline preload="metadata">
+                      <source src="../media/demo.mp4" type="video/mp4">
+                      <source src="../media/demo.mov" type="video/quicktime">
+                      Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/seanlai1/Homey" target="_blank" rel="noreferrer" class="project-text-link">
+                      <h3 class="project-title">Homey</h3>
+                      <p class="project-category">Web Development</p>
+                    </a>
+                  </div>
+                  <div class="project-card-face project-card-back">
+                    <button type="button" class="project-info-btn" data-flip-btn aria-label="Back to project card">
+                      <ion-icon name="arrow-undo-outline"></ion-icon>
+                    </button>
+                    <div>
+                      <h3 class="project-title">Homey</h3>
+                      <p class="project-category">Web Development</p>
+                      <p class="project-description">Full-stack roommate finder web app with Tinder-style swiping, real-time messaging via Socket.io, and algorithm-based compatibility matching.</p>
+                    </div>
+                    <div class="project-links">
+                      <a class="project-mini-link" href="https://github.com/seanlai1/Homey" target="_blank" rel="noreferrer">View Source</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="web development">
+              <div class="project-flip-card" data-project-card>
+                <div class="project-card-inner">
+                  <div class="project-card-face project-card-front">
+                    <button type="button" class="project-info-btn" data-flip-btn aria-label="Show project description">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </button>
+                    <a class="project-front-link" href="https://github.com/ethansy878/Emissions-Buddy" target="_blank" rel="noreferrer">
+                      <figure class="project-img">
+                        <div class="project-item-icon-box">
+                          <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+                        <img src="../media/emissionsbuddy.webp" alt="Emissions Buddy" loading="lazy">
+                      </figure>
+                      <h3 class="project-title">Emissions Buddy</h3>
+                      <p class="project-category">Web Development</p>
+                    </a>
+                  </div>
+                  <div class="project-card-face project-card-back">
+                    <button type="button" class="project-info-btn" data-flip-btn aria-label="Back to project card">
+                      <ion-icon name="arrow-undo-outline"></ion-icon>
+                    </button>
+                    <div>
+                      <h3 class="project-title">Emissions Buddy</h3>
+                      <p class="project-category">Web Development</p>
+                      <p class="project-description">Chrome extension that activates on flight booking pages to present carbon emission data from flight logs, plane model, passenger load, and fuel type.</p>
+                    </div>
+                    <div class="project-links">
+                      <a class="project-mini-link" href="https://github.com/ethansy878/Emissions-Buddy" target="_blank" rel="noreferrer">View Source</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="research">
+              <div class="project-flip-card" data-project-card>
+                <div class="project-card-inner">
+                  <div class="project-card-face project-card-front">
+                    <button type="button" class="project-info-btn" data-flip-btn aria-label="Show project description">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </button>
+                    <a class="project-front-link" href="#">
+                      <figure class="project-img">
+                        <div class="project-item-icon-box">
+                          <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+                        <img src="../media/quicresearch.jpg" alt="QUIC Protocol Research" loading="lazy">
+                      </figure>
+                      <h3 class="project-title">QUIC Protocol Research</h3>
+                      <p class="project-category">Research</p>
+                    </a>
+                  </div>
+                  <div class="project-card-face project-card-back">
+                    <button type="button" class="project-info-btn" data-flip-btn aria-label="Back to project card">
+                      <ion-icon name="arrow-undo-outline"></ion-icon>
+                    </button>
+                    <div>
+                      <h3 class="project-title">QUIC Protocol Research</h3>
+                      <p class="project-category">Research</p>
+                      <p class="project-description">Research benchmarking the QUIC network protocol for throughput, latency, and packet loss against TCP and UDP using virtual machines and network testbeds, with Q-learning to optimize behavior under bottleneck conditions.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="vr/ar">
+              <div class="project-flip-card" data-project-card>
+                <div class="project-card-inner">
+                  <div class="project-card-face project-card-front">
+                    <button type="button" class="project-info-btn" data-flip-btn aria-label="Show project description">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </button>
+                    <a class="project-front-link" href="https://greenhouse-gamedev.itch.io/heartwood" target="_blank" rel="noreferrer">
+                      <figure class="project-img">
+                        <div class="project-item-icon-box">
+                          <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+                        <img src="../media/greenhouse.png" alt="VR Forest Experience" loading="lazy">
+                      </figure>
+                      <h3 class="project-title">VR Forest Experience</h3>
+                      <p class="project-category">VR/AR</p>
+                    </a>
+                  </div>
+                  <div class="project-card-face project-card-back">
+                    <button type="button" class="project-info-btn" data-flip-btn aria-label="Back to project card">
+                      <ion-icon name="arrow-undo-outline"></ion-icon>
+                    </button>
+                    <div>
+                      <h3 class="project-title">VR Forest Experience</h3>
+                      <p class="project-category">VR/AR</p>
+                      <p class="project-description">Immersive 3D first-person PC game set in a live forest virtual space, built with Unity and custom C# scripting for physics behaviors and graphical effects.</p>
+                    </div>
+                    <div class="project-links">
+                      <a class="project-mini-link" href="https://greenhouse-gamedev.itch.io/heartwood" target="_blank" rel="noreferrer">Open Project</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project-item active" data-filter-item data-category="machine learning">
+              <div class="project-flip-card" data-project-card>
+                <div class="project-card-inner">
+                  <div class="project-card-face project-card-front">
+                    <button type="button" class="project-info-btn" data-flip-btn aria-label="Show project description">
+                      <ion-icon name="information-circle-outline"></ion-icon>
+                    </button>
+                    <a class="project-front-link" href="https://github.com/seanlai1/machine-learning-final-project" target="_blank" rel="noreferrer">
+                      <figure class="project-img">
+                        <div class="project-item-icon-box">
+                          <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+                        <img src="../media/netflixmodel.jpg" alt="Netflix Predictive Model" loading="lazy">
+                      </figure>
+                      <h3 class="project-title">Netflix Predictive Model</h3>
+                      <p class="project-category">Machine Learning</p>
+                    </a>
+                  </div>
+                  <div class="project-card-face project-card-back">
+                    <button type="button" class="project-info-btn" data-flip-btn aria-label="Back to project card">
+                      <ion-icon name="arrow-undo-outline"></ion-icon>
+                    </button>
+                    <div>
+                      <h3 class="project-title">Netflix Predictive Model</h3>
+                      <p class="project-category">Machine Learning</p>
+                      <p class="project-description">Predictive model for movie ratings using collaborative filtering on historical user-movie interactions with feature engineering, preprocessing pipelines, and model evaluation.</p>
+                    </div>
+                    <div class="project-links">
+                      <a class="project-mini-link" href="https://github.com/seanlai1/machine-learning-final-project" target="_blank" rel="noreferrer">View Source</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+      <!--  CONTACT  -->
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25236.62!2d-122.3821!3d37.5735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f777a19503e05%3A0x4640de88ea4a1773!2sBurlingame%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1647608789441!5m2!1sen!2sus"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="https://formspree.io/f/xnjgbypl" method="POST" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
